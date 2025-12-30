@@ -1,44 +1,66 @@
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 const projects = [
   {
-    title: "AI Agent Invoice Automation System",
+    title: "DPR Assessment System",
     description:
-      "Automated invoice processing system with persistent memory, intelligent data extraction, and scalable backend architecture.",
-    tech: ["Node.js", "TypeScript", "SQLite", "Automation"],
-    link: "#", // add GitHub or demo link
-  },
-  {
-    title: "Dpr Assessment System",
-    description:
-      "Scalable AI Driven Assessment Software For Intigration with large application for better Analysis of Detail Report Project.",
-    tech: ["React", "Node.js", "Python", "TypeScript", "mongoDB Atlas", "Express.js"],
-    link: "#",
-  },
-  {
-    title: "Inventroy Management System",
-    description:
-      "MERN Stack Web Application data visualization platform with Modern UI, interactive reports and Smart inventory managment.",
-    tech: ["React", "MongoDB", "Chart.js", "Node.js", "Express.js", "TailwindCSS"],
-    link: "#",
+    "Scalable AI-driven assessment software designed for integration with large applications and detailed report analysis.",
+    tech: [
+      "React",
+      "Node.js",
+      "Python",
+      "TypeScript",
+      "MongoDB Atlas",
+      "Express.js",
+    ],
+    link: "https://voidframe2.vercel.app/",
+    repolink: "https://github.com/Mohitkumar2217/voidframe2",
   },
   {
     title: "Krishi Saarthi Web App",
     description:
-      "Full-stack Kishi Saarthi app with modern UI, and inventory management.",
+      "Full-stack agriculture support platform with modern UI and intelligent data-driven features.",
     tech: ["Node.js", "React", "JavaScript", "Gemini AI API"],
-    link: "#",
+    link: "https://tracebase-main.vercel.app/",
+    repolink: "https://github.com/Mohitkumar2217/tracebase",
   },
   {
-    title: "Url Shortner",
+    title: "URL Shortener",
     description:
-      "Small Url Shortner Website To Shorten Large URL into Small Urls just Like betliy.",
-    tech: ["Node.js", "Express", "Ejs", "JavaScript"],
-    link: "#",
+      "Lightweight URL shortener service that converts long URLs into clean, shareable short links similar to Bitly.",
+    tech: ["Node.js", "Express", "EJS", "JavaScript"],
+    link: "https://url-shortener-1-9443.onrender.com/",
+    repolink: "https://github.com/Mohitkumar2217/URL-Shortener",
+  },
+  {
+    title: "AI Agent Invoice Automation System",
+    description:
+    "Automated invoice processing system with persistent memory, intelligent data extraction, and a scalable backend architecture.",
+    tech: ["Node.js", "TypeScript", "SQLite", "Automation"],
+    link: "modal",
+    repolink: "https://github.com/Mohitkumar2217/ai_agent_invoice_managment",
+  },
+  {
+    title: "Inventory Management System",
+    description:
+    "MERN stack web application featuring modern UI, interactive dashboards, and smart inventory management.",
+    tech: [
+      "React",
+      "MongoDB",
+      "Chart.js",
+      "Node.js",
+      "Express.js",
+      "TailwindCSS",
+    ],
+    link: "modal",
+    repolink: "modal",
   },
 ];
 
 export const Projects = () => {
+  const [activeProject, setActiveProject] = useState(null);
+
   return (
     <section
       id="projects"
@@ -50,52 +72,92 @@ export const Projects = () => {
             Featured Projects
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="
-                  glass p-6 rounded-xl border border-white/10
-                  hover:-translate-y-1 hover:border-blue-500/30
-                  hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)]
-                  transition-all
-                "
+                className="glass p-6 rounded-xl border border-white/10
+                hover:-translate-y-1 hover:border-blue-500/30
+                hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)]
+                transition-all"
               >
-                <h3 className="text-xl font-bold mb-2">
-                  {project.title}
-                </h3>
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
 
-                <p className="text-gray-400 mb-4">
-                  {project.description}
-                </p>
+                <p className="text-gray-400 mb-4">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="
-                        bg-blue-500/10 text-blue-500 py-1 px-3
-                        rounded-full text-sm
-                        hover:bg-blue-500/20
-                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                        transition
-                      "
+                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm
+                      hover:bg-blue-500/20 transition"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <a
-                  href={project.link}
-                  className="inline-block text-blue-400 hover:text-blue-300 transition-colors mt-2"
-                >
-                  View Project →
-                </a>
+                <div className="flex justify-center gap-6">
+                  {project.link === "modal" ? (
+                    <button
+                      onClick={() => setActiveProject(project.title)}
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      Visit Site →
+                    </button>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      Visit Site →
+                    </a>
+                  )}
+
+                  {project.repolink !== "#" && (
+                    <a
+                      href={project.repolink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      GitHub Repo →
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* MODAL */}
+        {activeProject && (
+          <div
+            onClick={() => setActiveProject(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 max-w-sm text-center shadow-xl"
+            >
+              <h3 className="text-xl font-bold mb-2 text-white">
+                🚧 {activeProject}
+              </h3>
+              <p className="text-gray-400 mb-6">
+                This project is currently under active development.
+                The live demo will be available soon.
+              </p>
+              <button
+                onClick={() => setActiveProject(null)}
+                className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </RevealOnScroll>
     </section>
   );
