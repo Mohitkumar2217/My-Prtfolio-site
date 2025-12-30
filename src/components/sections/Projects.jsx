@@ -1,5 +1,43 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
+const projects = [
+  {
+    title: "AI Agent Invoice Automation System",
+    description:
+      "Automated invoice processing system with persistent memory, intelligent data extraction, and scalable backend architecture.",
+    tech: ["Node.js", "TypeScript", "SQLite", "Automation"],
+    link: "#", // add GitHub or demo link
+  },
+  {
+    title: "Dpr Assessment System",
+    description:
+      "Scalable AI Driven Assessment Software For Intigration with large application for better Analysis of Detail Report Project.",
+    tech: ["React", "Node.js", "Python", "TypeScript", "mongoDB Atlas", "Express.js"],
+    link: "#",
+  },
+  {
+    title: "Inventroy Management System",
+    description:
+      "MERN Stack Web Application data visualization platform with Modern UI, interactive reports and Smart inventory managment.",
+    tech: ["React", "MongoDB", "Chart.js", "Node.js", "Express.js", "TailwindCSS"],
+    link: "#",
+  },
+  {
+    title: "Krishi Saarthi Web App",
+    description:
+      "Full-stack Kishi Saarthi app with modern UI, and inventory management.",
+    tech: ["Node.js", "React", "JavaScript", "Gemini AI API"],
+    link: "#",
+  },
+  {
+    title: "Url Shortner",
+    description:
+      "Small Url Shortner Website To Shorten Large URL into Small Urls just Like betliy.",
+    tech: ["Node.js", "Express", "Ejs", "JavaScript"],
+    link: "#",
+  },
+];
+
 export const Projects = () => {
   return (
     <section
@@ -7,158 +45,55 @@ export const Projects = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Featured Projects
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-              <h3 className="text-xl font-bold mb-2"> Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable cloud infrastructure management with real-time
-                monitoring and automated scaling.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="
+                  glass p-6 rounded-xl border border-white/10
+                  hover:-translate-y-1 hover:border-blue-500/30
+                  hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)]
+                  transition-all
+                "
+              >
+                <h3 className="text-xl font-bold mb-2">
+                  {project.title}
+                </h3>
 
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">AI Analytics Dashboard</h3>
-              <p className="text-gray-400 mb-4">
-                ML-powered data visualization platform with predictive analytics
-                and interactive reports.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Python", "TensorFlow", "D3.js", "Flask"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
+                <p className="text-gray-400 mb-4">
+                  {project.description}
+                </p>
 
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
-              <p className="text-gray-400 mb-4">
-                Full-stack e-commerce with modern UI, secure payment
-                integration, and customizable product inventory.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map(
-                  (tech) => (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech) => (
                     <span
                       key={tech}
                       className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
+                        bg-blue-500/10 text-blue-500 py-1 px-3
+                        rounded-full text-sm
+                        hover:bg-blue-500/20
+                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
+                        transition
+                      "
                     >
                       {tech}
                     </span>
-                  )
-                )}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
+                  ))}
+                </div>
 
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">Real-Time Chat App</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable chat platform supporting real-time messaging, presence,
-                and group chat features.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center ">
                 <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                  href={project.link}
+                  className="inline-block text-blue-400 hover:text-blue-300 transition-colors mt-2"
                 >
                   View Project →
                 </a>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </RevealOnScroll>
