@@ -54,7 +54,7 @@ const projects = [
       "TailwindCSS",
     ],
     link: "modal",
-    repolink: "modal",
+    repolink: "https://github.com/Mohitkumar2217/Inventory_management_system_mohit.ISM",
   },
 ];
 
