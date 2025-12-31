@@ -6,6 +6,8 @@ import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects"; 
 import { Contact } from "./components/sections/Contact";
+import { Stats } from "./components/sections/Stats";
+import { Timeline } from "./components/sections/Timeline";
 import { Achievement } from "./components/sections/Acheivement";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Home />
         <About />
         <Achievement />
+        <Stats />
+        <Timeline />
         <Projects />
         <Contact />
       </div>
