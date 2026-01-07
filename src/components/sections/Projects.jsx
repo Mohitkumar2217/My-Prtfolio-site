@@ -53,7 +53,7 @@ const projects = [
       "Express.js",
       "TailwindCSS",
     ],
-    link: "modal",
+    link: "https://inventory-management-system-mohit-i-three.vercel.app/",
     repolink: "https://github.com/Mohitkumar2217/Inventory_management_system_mohit.ISM",
   },
 ];
